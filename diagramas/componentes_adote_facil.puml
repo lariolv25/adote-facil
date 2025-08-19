@@ -1,0 +1,18 @@
+@startuml
+title Diagrama de Componentes - Adote Fácil
+
+component "Frontend (React)" as Frontend
+component "API Usuários" as ApiUsuarios
+component "API Animais" as ApiAnimais
+component "API Adoções" as ApiAdocoes
+database "MongoDB" as Database
+
+Frontend --> ApiUsuarios : Login/Cadastro
+Frontend --> ApiAnimais : Listagem/Cadastro de Animais
+Frontend --> ApiAdocoes : Solicitação de Adoção
+
+ApiUsuarios --> Database
+ApiAnimais --> Database
+ApiAdocoes --> Database
+
+@enduml
