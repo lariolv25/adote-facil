@@ -1,0 +1,30 @@
+@startuml
+title Diagrama de Atividades - Solicitação de Adoção
+
+start
+
+:Usuário acessa o sistema;
+:Realiza login;
+
+if (Login válido?) then (Sim)
+  :Buscar animal disponível;
+  :Selecionar animal;
+  :Visualizar detalhes;
+  :Solicitar adoção;
+
+  :Sistema registra solicitação;
+  :Administrador recebe solicitação;
+
+  if (Administrador aprova?) then (Sim)
+    :Adoção aprovada;
+  else (Não)
+    :Adoção rejeitada;
+  endif
+
+else (Não)
+  :Exibir mensagem de erro;
+endif
+
+stop
+@enduml
+
